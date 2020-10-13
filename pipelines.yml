@@ -46,7 +46,7 @@ pipelines:
         configuration:
           inputSteps:
             - name: build_go
-          targetRepository: testgo
+          targetRepository: go
           integrations:
             - name: pipelineArtInt
              
