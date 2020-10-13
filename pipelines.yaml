@@ -12,7 +12,7 @@ resources:
   - name: go_build_info_publish_module
     type: BuildInfo
     configuration:
-      sourceArtifactory: myArtifactory
+      sourceArtifactory: swarnenduk
       buildName: go_example_module_publish
       buildNumber: 1
        
@@ -20,7 +20,7 @@ resources:
   - name: go_build_info_publish
     type: BuildInfo
     configuration:
-      sourceArtifactory: myArtifactory
+      sourceArtifactory: swarnenduk
       buildName: go_example_build_publish
       buildNumber: 1
 
