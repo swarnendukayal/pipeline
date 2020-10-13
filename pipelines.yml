@@ -68,7 +68,7 @@ pipelines:
           targetRepository: go
           autoPublishBuildInfo: true
           integrations:
-            - name: pipelineArtInt
+            - name: pipelineSample
           inputResources:
             - name: go_example
           outputResources:
