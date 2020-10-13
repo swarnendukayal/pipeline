@@ -32,7 +32,7 @@ pipelines:
         type: GoBuild
         configuration:
           sourceLocation: .
-          repository: testgo
+          repository: go
           outputLocation: /tmp/dist
           outputFile: hello_gb
           inputResources:
