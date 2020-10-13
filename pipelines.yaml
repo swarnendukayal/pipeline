@@ -3,10 +3,10 @@ resources:
   - name: go_example
     type: GitRepo
     configuration:
-      path: myrepo/go-example
+      path: swarnendukayal/pipeline
       branches:
         include: main
-      gitProvider: myGithub
+      gitProvider: pipelineSample
        
   # Build info for the published Go module
   - name: go_build_info_publish_module
@@ -14,7 +14,7 @@ resources:
     configuration:
       sourceArtifactory: myArtifactory
       buildName: go_example_module_publish
-      buildNumber: 332
+      buildNumber: 1
        
   # Build info for the published Go app
   - name: go_build_info_publish
@@ -32,13 +32,13 @@ pipelines:
         type: GoBuild
         configuration:
           sourceLocation: .
-          repository: myrepo-go
+          repository: testgo
           outputLocation: /tmp/dist
           outputFile: hello_gb
           inputResources:
             - name: go_example
           integrations:
-            - name: myArtifactory
+            - name: swarnenduk
              
       # Publish the Go sample app binary to Artifactory
       - name: publish_go_binary
@@ -46,9 +46,9 @@ pipelines:
         configuration:
           inputSteps:
             - name: build_go
-          targetRepository: myrepo-go
+          targetRepository: testgo
           integrations:
-            - name: myArtifactory
+            - name: swarnenduk
              
       # Publish the Go sample app build info
       - name: publish_build
@@ -65,10 +65,10 @@ pipelines:
         configuration:
           sourceLocation: .
           version: v0.0.0
-          targetRepository: myrepo-go
+          targetRepository: testgo
           autoPublishBuildInfo: true
           integrations:
-            - name: myArtifactory
+            - name: swarnenduk
           inputResources:
             - name: go_example
           outputResources:
